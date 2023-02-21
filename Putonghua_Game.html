@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>遊戲</title>
+        <script src = "main.js"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src ="navbar.js"></script>
+        <link rel="stylesheet" href="game.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="background.css">
+    </head>
+    <body>
+        <div class = "backgroundImg">
+        <div class="main">
+            <form name="table">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type = "text" class="targetTextBox" id ="targetText" name="targetText" value ="" size="2" readonly>
+                <input type = "button" class="readButton" id = "readTheWord" value="讀音" onclick=readtheword()>
+               
+                <table>
+                    <tr>
+                        <td class="tableText">聲母</td>
+                        <td>
+                            <input type="button" class="mainButton" id="b" value="b" onclick=readTable(this.id)>&nbsp;
+                            <input type="button" class="mainButton" id="p" value="p" onclick=readTable(this.id)>&nbsp;
+                            <input type="button" class="mainButton" id="m" value="m" onclick=readTable(this.id)>&nbsp;
+                            <input type="button" class="mainButton" id="f" value="f" onclick=readTable(this.id)>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <input type="radio"  class="mainRadio" name="firstCheck" id = "firstCheck" value = "b">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio"  class="mainRadio" name="firstCheck" value = "p">&nbsp;&thinsp;&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;
+                            <input type="radio"  class="mainRadio" name="firstCheck" value = "m">&nbsp;&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio"  class="mainRadio" name="firstCheck" value = "f">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tableText">韻母</td>
+                        <td>
+                            <input type="button" class="mainButton" id="a" value="a" onclick=readTable(this.id)>&nbsp;
+                            <input type="button" class="mainButton" id="o" value="o" onclick=readTable(this.id)>&nbsp;
+                            <input type="button" class="mainButton" id="u" value="u" onclick=readTable(this.id)>&nbsp;
+                            <input type="button" class="mainButton" id="i" value="i" onclick=readTable(this.id)>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <input type="radio"  class="mainRadio" name="secondCheck" value = "a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio"  class="mainRadio" name="secondCheck" value = "o">&nbsp;&thinsp;&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio"  class="mainRadio" name="secondCheck" value = "u">&nbsp;&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio"  class="mainRadio" name="secondCheck" value = "i">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tableText">聲調</td>
+                        <td>
+                            <input type="button" class="mainButton" id="t1" value="-" onclick=readTable(this.id)>&nbsp;
+                            <input type="button" class="mainButton" id="t2" value="ˊ" onclick=readTable(this.id)>&nbsp;
+                            <input type="button" class="mainButton" id="t3" value="ˇ" onclick=readTable(this.id)>&nbsp;
+                            <input type="button" class="mainButton" id="t4" value="ˋ" onclick=readTable(this.id)>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <input type="radio"  class="mainRadio" name="toneCheck" value = "1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio"  class="mainRadio" name="toneCheck" value = "2">&nbsp;&thinsp;&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio"  class="mainRadio" name="toneCheck" value = "3">&nbsp;&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio"  class="mainRadio" name="toneCheck" value = "4">
+                        </td>
+                    </tr>
+                </table>
+                <input type= "button" class="readCheck" value="檢查答案" onclick=letterToChiWord(document.table.firstCheck.value,document.table.secondCheck.value,document.table.toneCheck.value)>
+                <br>
+                <input type = "text" id = "outputBox" value = "(to be removed)" name="outputBox">
+            </form> 
+        </div>
+        
+        <audio id="audio" src = ""></audio>
+        <div id="hud">
+            <div class="hud-item">
+                <p id="progressText" class="hud-prefix">
+                    問題 1
+                </p>
+                <div id="progressBar">
+                    <div id="progressBarFull"></div>
+                </div>
+                <input class="answerButton" type = "button" value="A:" id="answerBt1" onclick=check(this.id)>
+                <input class="answerButton" type = "button" value="B:" id="answerBt2" onclick=check(this.id)>
+                <input class="answerButton" type = "button" value="C:" id="answerBt3" onclick=check(this.id)>
+                <input class="answerButton" type = "button" value="D:" id="answerBt4" onclick=check(this.id)>
+            </div>
+            <div class="hud-item">
+                <p class="hud-prefix">
+                    分數
+                </p>
+                    <h1 class="hud-main-text" id="score">
+                        0
+                    </h1>
+            </div>
+        </div>
+    </div>
+        <script>navbar();</script>
+    </body>
+</html>

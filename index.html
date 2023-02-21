@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="background.css">
+<html>
+  <div class = "backgroundImg">
+    <head><title>介紹</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src ="navbar.js"></script>
+        <script src ="content.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+      <div class="container">
+        <center><h1><b>介紹</b></h1>
+          <input type = "button" id = "page1" name ="page1" value ="普通話" onclick="func1()" class="btn btn-outline-secondary"/>
+          <input type = "button" id = "page2" name ="page2" value ="普通話的歷史" onclick="func2()" class="btn btn-outline-secondary"/> 
+          <input type = "button" id = "page3" name ="page3" value ="普通話國家標準" onclick= "func3()" class="btn btn-outline-secondary"/>
+          <input type = "button" id = "page3" name ="page3" value ="普通話的調研採集地爭議" onclick = "func4()" class="btn btn-outline-secondary"/>
+        </br>
+      </center>
+        <p id = "content"><center><h3 id= "introduction">我們想讓更多的人認識普通話的文化,普通話的歷史。</br>所以介紹了不同有關的普通話資料,可以按以上按鈕查詢。</br>而且這裡有普通話的小遊戲,大家可以試玩!!</br>位於底部的導覽列有五個按鍵，分別代表網站中的五頁頁面，</br>用戶只需按在想去的頁面按鍵，即可跳轉相應的頁面。</center></h3></p></br>
+      <center><img src="./img/weclome.jpg" id = "picture" width = 500 height = 400 ></center>
+      </div>
+      <script>navbar();</script>
+    </body>
+</html>

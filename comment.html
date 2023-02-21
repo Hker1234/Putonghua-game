@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="background.css">
+<html>
+    <head><title>意見</title>
+    <script src ="navbar.js"></script><meta charset="UTF-8">
+    <script defer src ="comment.js"></script>
+    <style>html {
+        position: relative;
+        min-width: 1024px;
+        min-height: 768px;
+        height: 100%;
+    }</style>
+    </head>
+    <body>
+        <div class = "backgroundImg">
+        <center><form action = "./index.html" method = "GET" name = "Comment" id = "commentform">
+        <h1>對我們網站的意見</h1></br>
+        姓名 : <input type ="text" name ="name" id ="name" >
+        </br>
+        </br>
+        <p id = "error1"></p>
+        </br>
+        <textarea placeholder="輸入你的意見,意見最小十個字" style="width:400px; height:300px; resize:none " id = "comment" name = "comment" rows= "4" cols= "100" maxlength="200" ></textarea>
+        </br>
+        </br>
+        <p id = "error2"></p>
+        </br>
+         <button type="submit" class="btn btn-primary">提交</button>
+         <input type="button" value="重寫" onclick="Rewrite()" class="btn btn-primary"/> <!--it will clean the content on the comment box .-->
+    </form>
+    </center>
+    </div>
+    <script>navbar();</script>
+    </body>
+</html>

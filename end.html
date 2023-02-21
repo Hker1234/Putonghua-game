@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="background.css">
+</head>
+<body>
+    <div class = "backgroundImg">
+    <div class="container">
+        <div id="end" class="flex-center flex-column">
+            <h1 id="finalScore">0</h1>
+            <form class="end-form-container">
+                <h2 id="end-text">
+                    請輸入你的名字,以儲存您的分數。
+                </h2>
+                <input type="text" name="name" id="username"
+                placeholder="請輸入你的名字">
+                &nbsp; &nbsp; &nbsp;<button class="btn" id="saveScoreBtn" type="submit" onclick="saveHighScore(event)" disabled>儲存</button>
+            </form>
+            <a href="./Putonghua_Game.html" class="btn">再玩一次</a>
+            <a href="./highscores.html" class="btn">返回主頁</a>
+        </div>
+    </div>
+</div>
+    <script src="end.js"></script>
+</body>
+</html>

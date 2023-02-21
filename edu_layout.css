@@ -1,0 +1,52 @@
+/* 
+. 揀class 
+# 揀id
+*/ 
+
+.imagebox{
+    display: grid;
+    table-layout: fixed;
+    width: 100%;
+    /*border:1px solid;*/
+    /*margin-top:20px;*/
+    border-collapse: collapse;
+    grid-template-columns: auto auto auto;
+}
+/*#initials,#finals,#tones{
+    /*border:1px solid black;/*temp for border
+}*/
+.title{
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5pt;
+}
+#pinyin_explain{
+    font-size:20px;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+table,tr{
+    border: 1px solid;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+}
+td{
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 25%;
+    font-size:12pt;
+}
+#ini_con{
+    font-size:14pt;
+    font-weight: bold;
+}
+#con_title{
+    font-weight: bold;
+    font-size: 15pt;
+}
